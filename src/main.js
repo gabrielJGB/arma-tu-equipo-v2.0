@@ -219,5 +219,5 @@ function showWindow() {
 }
 
 function removeVideo() {
-    this.parentNode.remove()
+    this.parentNode.parentNode.remove()
 }

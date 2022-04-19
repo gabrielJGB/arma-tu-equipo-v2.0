@@ -204,3 +204,7 @@ body {
     font-size: 15px;
     padding: 2px;
 }
+
+@media screen and (max-width: 600px){
+    
+}
