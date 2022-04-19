@@ -1,67 +1,51 @@
-import {initializeApp} from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js'
-import {
-  getFirestore, collection, onSnapshot, 
-  addDoc, deleteDoc, doc,
-  query, where,
-  orderBy, serverTimestamp,
-  getDoc,
-  updateDoc,
-} from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js'
-import {
-  getAuth,createUserWithEmailAndPassword,
-  signOut,signInWithEmailAndPassword,
-  onAuthStateChanged
+import {} from './initialize.js'
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js'
 
-} from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js'
+const auth = getAuth()
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCgtaWIDKQGDGe5Xxe_bO2ckx71P0TfkMc",
-  authDomain: "arma-tu-equipo-85761.firebaseapp.com",
-  projectId: "arma-tu-equipo-85761",
-  storageBucket: "arma-tu-equipo-85761.appspot.com",
-  messagingSenderId: "686317921143",
-  appId: "1:686317921143:web:a9632850611be3e9a87772"
-};
-
-//init firebase app
-initializeApp(firebaseConfig)
-
-const db = getFirestore()
+// check user auth
+onAuthStateChanged(auth,(user)=>{
+  if(user){
+    document.querySelector('body').style.color = "white"
+    document.querySelector('body').innerHTML = "Cargando..."
+    window.location.href = "./main.html"
+  }
+})
 
 //login
-const loginForm = document.querySelector('.login')
+const loginForm = document.querySelector('.access-form')
 loginForm.addEventListener('submit', (e) => {
   e.preventDefault()
 
   const email = loginForm.email.value
   const password = loginForm.password.value
 
-  signInWithEmailAndPassword(auth, email, password)
-    .then(userCredential => {
-      // console.log('user logged in:', cred.user)
-      window.location.href = "./dashboard.html";
-      
+signInWithEmailAndPassword(auth, email, password)
+    .then((user) => {
+      window.location.href = "./main.html"
     })
-    .catch(err => {
-      console.log(err.message)
+    .catch(error => {
+      let errorCode = error.code
+      const errorElement = document.querySelector('.error-message')
+
+      if (errorCode === 'auth/user-not-found') {
+          loginForm.email.style.border = "solid 2px red"
+          errorElement.innerHTML =  "&#128712; User not found"
+      }
+      else if (errorCode === 'auth/invalid-email') {
+          loginForm.email.style.border = "solid 2px red"
+          errorElement.innerHTML =  "&#128712; Invalid email"
+      }else{
+          loginForm.email.style.border = ''
+          errorElement.innerHTML =  ''
+      }
+      if (errorCode === 'auth/wrong-password') {
+          loginForm.email.style.border = "solid 2px red"
+          errorElement.innerHTML =  "&#128712; Wrong password"
+      }
+      else {
+         loginForm.password.style.border = ''
+      }
     })
 })
 
-//signup
-const signupForm = document.querySelector('.signup')
-signupForm.addEventListener('submit', (e) => {
-  e.preventDefault()
-
-  const email = signupForm.email.value
-  const password = signupForm.password.value
-
-  //creates an user and logs in
-  createUserWithEmailAndPassword(auth,email,password)
-    .then((userCredential)=>{
-      window.location.href = "./main.html";
-      
-    })
-    .catch((error)=>console.error(error.message))
-
-
-})

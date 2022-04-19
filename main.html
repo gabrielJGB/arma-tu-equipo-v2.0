@@ -1,11 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>App</title>
-</head>
-<body>
-	
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Multistream</title>
+		<link rel="stylesheet" href="./styles/main.css">
+		<link rel="stylesheet" href="./styles/index.css">
+	</head>
+	<body>
+		
+		<div class="navbar-title">
+			
+			
+				<div class="user"></div>
+				<button class="log-out-button">Salir</button>
+			
+		</div>
+
+		<div class="background-a">
+			MultiStream
+		</div>
+
+		<div class="navbar">
+			<div class="slide-container">
+				<div class="slide-left">
+					<input type="range" min="100" max="720" value="480" class="slider" id="myRange">
+					<div id="demo">854x480</div>
+				</div>
+				<button class="window-button"> + </button>
+			</div>
+		</div>
+
+		<div class="container"></div>
+		
+		<div class="modal">
+			<div class="window">
+				<p>Guardados:</p>
+				<div class="list">
+						
+				</div>
+				<input placeholder="Usuario" class="search-input" type="text">
+				<div class="buttons">
+					<button class="accept-button">Añadir</button>
+					<button class="cancel-button">Cerrar</button>
+				</div>
+			</div>
+		</div>
+
+
+
+<script src="https://player.twitch.tv/js/embed/v1.js"></script>
+		<script src="./src/main.js" type="module"></script>
+	</body>
 </html>

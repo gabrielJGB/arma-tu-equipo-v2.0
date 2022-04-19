@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/form.css">
-    <title>App</title>
+    <title>Inicio</title>
 </head>
 
 <body>
@@ -15,9 +15,9 @@
         <form class="access-form form">
             <label class="title">Iniciar sesion</label>
             <label>Email</label>
-            <input autofocus type="email" placeholder="Email">
+            <input required autofocus name="email" type="email" placeholder="Email">
             <label>Contraseña</label>
-            <input type="password" placeholder="Contraseña">
+            <input required name="password" type="password" placeholder="Contraseña">
             <label class="error-message"></label>
             <div class="buttons-container">
                 <button class="access-button button">Iniciar sesion</button>
@@ -30,3 +30,4 @@
 </body>
 
 </html>
+

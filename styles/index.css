@@ -1,0 +1,206 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Rubik';
+}
+
+body {
+    background-color: #272727;
+    overflow-y: scroll;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-bottom: 80px;
+    gap: 10px
+}
+
+#box {
+    height: 360;
+    width: 640;
+    background-color: rgb(97, 201, 166);
+
+}
+
+.slide-container {
+    display: flex;
+    flex-direction: row;
+    color: rgb(236, 236, 236);
+}
+
+.slide-left{
+	display:""
+}
+
+.slider {	
+    margin-right: 15px;
+    height: 20px;
+    outline: none;
+    cursor: pointer;
+}
+
+.navbar {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 6px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px black;
+    background-color: rgba(19, 19, 19, 0.915);
+    display: flex;
+    justify-content: center;
+}
+
+.window-button {
+    
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 5px;
+	font-size:18px;
+    border: solid 2px rgba(255, 255, 255, 0.493);
+    color: rgba(255, 255, 255, 0.562);
+    outline: none;
+	width:44px;
+	height:44px;
+}
+
+.window-button:hover {
+    border: solid 2px rgba(255, 255, 255, 0.815);
+    color: rgba(255, 255, 255, 0.815);
+}
+
+.delete-button {
+    cursor: pointer;
+    background-color: #3e3e3e;
+    color: #eaeaea;
+    border: 0;
+}
+
+.delete-button:hover {
+    background-color: #4e4e4e;
+    color: #ffffff;
+}
+
+.delete-button:active {
+    background-color: #3a3a3a;
+    color: #c2c2c2;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(0 0 0 /40%);
+    justify-content: center;
+    align-items: center;
+	z-index: 5;
+}
+
+.window {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 220px;
+    gap: 10px;
+    padding: 10px;
+    background-color: rgb(40 40 40);
+    border-radius: 2px;
+    box-shadow: 0 0 20px black;
+    color: #ededed;
+}
+
+.buttons {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.buttons button {
+
+    cursor: pointer;
+    width: 48%;
+    color: white;
+    border: 0;
+    padding: 10px 0;
+}
+
+.accept-button {
+    background-color: rgb(0, 119, 255);
+}
+
+.cancel-button {
+    background-color: rgb(88, 88, 88);
+}
+
+.accept-button:hover {
+    background-color: rgb(24, 132, 255);
+}
+
+.cancel-button:hover {
+    background-color: rgb(105, 104, 104);
+}
+
+.list {
+    background-color: rgba(0, 0, 0, 0.473);
+    height: 80%;
+    overflow: auto;
+}
+
+.list a {
+    
+    text-align: left;
+    /* padding: 6px; */
+    background-color: rgb(43, 43, 43);
+    /* margin: 3px; */
+    color: rgb(231, 231, 231);
+    
+    
+}
+
+.list a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    background-color: rgb(36, 36, 36);
+}
+
+.user-box{
+    background-color: rgb(43, 43, 43);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 4px;
+    padding: 5px;
+}
+
+.search-input {
+    padding: 5px;
+    background-color: rgb(21 21 21);
+    border: 0;
+    outline: none;
+    font-size: 17px;
+    color: #ededed;
+}
+.background-a{
+    z-index: -1;
+    position:fixed;
+    top:40%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 70px;
+    color:#1b1b1b;
+	text-shadow: 0 0 3px #000000bf;
+}
+.user-div{
+    z-index: 2;
+    position: absolute;
+    text-shadow: 0 0 2px #000000;
+    color: white;
+    font-size: 15px;
+    padding: 2px;
+}
