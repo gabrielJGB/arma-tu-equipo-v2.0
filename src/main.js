@@ -170,7 +170,7 @@ function addVideo(user) {
 }
 
 function setChat(user){
-    chatEmbed.src = `https://www.twitch.tv/embed/${user}/chat?parent=multi-stream.vercel.app`
+    chatEmbed.src = `https://www.twitch.tv/embed/${user}/chat?darkpopout&parent=multi-stream.vercel.app`
 }
 
 
