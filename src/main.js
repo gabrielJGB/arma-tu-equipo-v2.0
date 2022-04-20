@@ -170,9 +170,8 @@ function addVideo(user) {
 }
 
 function setChat(user){
-    chatEmbed.src = `https://www.twitch.tv/embed/${user}/chat?parent=https://multi-stream.vercel.app/`
+    chatEmbed.src = `https://www.twitch.tv/embed/${user}/chat?parent=multi-stream.vercel.app`
 }
-// chatLink.href = `https://www.twitch.tv/popout/${user}/chat?popout=true`
 
 
 const logOutButton = document.querySelector('.log-out-button')
