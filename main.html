@@ -12,15 +12,13 @@
 		<div class="navbar-title">
 			
 			
-				<div class="user"></div>
-				<button class="log-out-button">Salir</button>
+			<div class="user"></div>
+			<button class="log-out-button">Salir</button>
 			
 		</div>
-
 		<div class="background-a">
-			MultiStream
+			Multi-Stream
 		</div>
-
 		<div class="navbar">
 			<div class="slide-container">
 				<div class="slide-left">
@@ -30,14 +28,22 @@
 				<button class="window-button"> + </button>
 			</div>
 		</div>
-
-		<div class="container"></div>
-		
+		<div class="main-container">
+			<div class="container"></div>
+			<div class="chat">
+				<iframe
+				id="chat_embed"
+				src="https://www.twitch.tv/embed/khandbl/chat?parent=https://multi-stream.vercel.app/"
+				height="500"
+				width="350">
+				</iframe>
+			</div>
+		</div>
 		<div class="modal">
 			<div class="window">
 				<p>Guardados:</p>
 				<div class="list">
-						
+					
 				</div>
 				<input placeholder="Usuario" class="search-input" type="text">
 				<div class="buttons">
@@ -46,10 +52,7 @@
 				</div>
 			</div>
 		</div>
-
-
-
-<script src="https://player.twitch.tv/js/embed/v1.js"></script>
+		<script src="https://player.twitch.tv/js/embed/v1.js"></script>
 		<script src="./src/main.js" type="module"></script>
 	</body>
 </html>

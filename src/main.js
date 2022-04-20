@@ -24,6 +24,11 @@ let searchInput = document.querySelector('.search-input');
 let slideContainer = document.querySelector('.slide-container');
 let slideLeft = document.querySelector('.slide-left');
 let userId = ''
+let chatEmbed = document.querySelector('#chat_embed')
+
+chatEmbed.height = "100%"
+chatEmbed.width = "300px"
+chatEmbed.style.display = "none"
 
 onAuthStateChanged(auth,(user)=>{
     
@@ -119,10 +124,20 @@ function addVideo(user) {
     bottomBox.style.display = 'flex'
     bottomBox.style['flex-direction'] = 'row'
 
-    let chatLink = document.createElement('A')
+    let chatLink = document.createElement('DIV')
     chatLink.style.color = "white"
+    chatLink.style.cursor = "pointer"
     chatLink.textContent = " Chat→"
-    chatLink.href = `https://www.twitch.tv/popout/${user}/chat?popout=true`
+    
+    chatLink.addEventListener('click',()=>{
+        if(chatEmbed.style.display == ""){
+            chatEmbed.style.display = "none"
+        }else{
+            chatEmbed.style.display = ""
+            setChat(userDiv.textContent)
+        }  
+    })
+
     chatLink.style.width = "max-content"
     chatLink.target = "_blank"
 
@@ -154,7 +169,10 @@ function addVideo(user) {
     closeWindow();
 }
 
-
+function setChat(user){
+    chatEmbed.src = `https://www.twitch.tv/embed/${user}/chat?parent=https://multi-stream.vercel.app/`
+}
+// chatLink.href = `https://www.twitch.tv/popout/${user}/chat?popout=true`
 
 
 const logOutButton = document.querySelector('.log-out-button')
@@ -221,3 +239,4 @@ function showWindow() {
 function removeVideo() {
     this.parentNode.parentNode.remove()
 }
+

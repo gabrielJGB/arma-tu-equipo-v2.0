@@ -14,9 +14,17 @@ body {
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-top: 10px;
-    margin-bottom: 80px;
-    gap: 10px
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: row;
+    height: 94vh;
+
 }
 
 #box {
@@ -204,6 +212,9 @@ body {
     font-size: 15px;
     padding: 2px;
 }
+
+
+
 
 @media screen and (max-width: 600px){
     

@@ -40,6 +40,7 @@ label{
     background-color: rgba(0, 0, 0, 0.253);
     padding: 5px 25px;
     color: #ededed;
+    height: 4vh;
 }
 
 
@@ -61,3 +62,5 @@ label{
 .delete-user-button:hover{
     background-color:  red;
 }
+
+

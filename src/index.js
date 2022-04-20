@@ -1,6 +1,6 @@
-if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("service-worker.js");
-}
+// if ("serviceWorker" in navigator) {
+//     navigator.serviceWorker.register("service-worker.js");
+// }
 
 import {} from './initialize.js'
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js'
